@@ -1,0 +1,114 @@
+/*   background-color: rgb(243, 156, 177);  */
+
+/* default stylings */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(243, 156, 177);
+}
+/* container  styling */
+.container {
+  min-height: 80vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: url("./jester.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-color: rgb(243, 156, 177);
+}
+
+/* button styling */
+button {
+  cursor: pointer;
+  outline: none;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 3px 4px 6px brown;
+  background: #e63946;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+button:hover {
+  filter: brightness(90%);
+  box-shadow: 6px 6px 10px brown;
+}
+button:active {
+  filter: brightness(150%);
+  box-shadow: 4px 4px 10px brown;
+}
+button:disabled {
+  cursor: default;
+  filter: brightness(30%);
+}
+
+/* joke-text styles */
+section {
+  display: flex;
+  justify-content: center;
+}
+.joke-text-cont {
+  background: rgba(0, 0, 0, 0.5);
+  max-width: 80%;
+  min-height: 50px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 10px;
+  display: inline-block;
+  margin: auto;
+  padding: 10px 50px 10px 50px;
+  animation: opening-text-animation 0.6s linear;
+}
+#joke-text {
+  text-align: center;
+  color: white;
+  font-size: 17px;
+  margin: auto;
+}
+
+/* helper classes */
+.vanish {
+  display: none;
+}
+
+/* responsive layout */
+
+@media screen and (max-width: 700px) {
+  button {
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+  }
+  .joke-text-cont #joke-text {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #new-joke-btn,
+  #last-joke-btn {
+    width: 90px;
+    height: 30px;
+    font-size: 13px;
+    padding: 4px;
+  }
+}
+
+/* animations */
+@keyframes opening-text-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
